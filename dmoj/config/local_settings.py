@@ -108,7 +108,7 @@ STATICFILES_FINDERS += ('compressor.finders.CompressorFinder',)
 ADMINS = ()
 
 # The sender for the aforementioned emails.
-SERVER_EMAIL = 'SCBOJ: Hệ thống chấm bài tập lập trình online <no.reply@sieucoban.com>'
+SERVER_EMAIL = 'SCBOJ - Hệ thống chấm bài tập lập trình online <no.reply@sieucoban.com>'
 
 
 ################################################
