@@ -128,3 +128,34 @@ sudo docker compose up -d
 
 # 3. Cài máy chấm
 - Xem hướng dẫn cài máy chấm tại: [SCBOJ-judge](https://github.com/SieuCoBan/SCBOJ-judge)
+### Tải judge
+```
+$ git clone --recursive https://github.com/DMOJ/judge.git
+$ cd judge/.docker
+$ make judge-tier1
+$ docker run \
+    -v /mnt/problems:/problems \
+    --cap-add=SYS_PTRACE \
+    dmoj/judge-tier1:latest \
+    cli -c /problems/judge.yml
+```
+### Tạo file Config cho Judge
+Tạo <tên file>.yml (/home/<user>/vnoj-docker/dmoj/problems/<tên file>.yml)
+```
+id: <judge name>
+key: <judge authentication key>
+problem_storage_globs:
+  - /problems/*
+```
+Kết nối Judge tới site
+```
+docker run \
+    --name judge \
+    --network="host" \
+    -v /home/<user>/vnoj-docker/dmoj/problems:/problems \
+    --cap-add=SYS_PTRACE \
+    -d \
+    --restart=always \
+    vnoj/judge-tiervnoj:latest \
+    run -p 9999 -c /problems/judge.yml localhost id key
+```
