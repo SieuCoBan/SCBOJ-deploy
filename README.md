@@ -126,6 +126,24 @@ sudo docker compose down
 sudo docker compose up -d
 ```
 
+## 2.5. Backup và restore
+Cài mysql client
+```
+docker exec -it vnoj_mysql bash
+apt-get update && apt-get install -y default-mysql-client # Hoặc mariadb-client
+```
+Lệnh backup
+```
+docker exec vnoj_mysql mysqldump --skip-column-statistics -u dmoj -p<mật khẩu database dmoj> --databases dmoj > /root/backup_db.sql
+```
+Lệnh copy database về server
+```
+...
+```
+Lệnh restore
+```
+cat /root/backup_db.sql | docker exec -i vnoj_mysql mysql -u dmoj -p<mật khẩu database dmoj> dmoj
+```
 # 3. Cài máy chấm
 - Xem hướng dẫn cài máy chấm tại: [SCBOJ-judge](https://github.com/SieuCoBan/SCBOJ-judge)
 ### Tải judge
