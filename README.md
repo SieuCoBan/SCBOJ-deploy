@@ -7,6 +7,7 @@ Sử dụng docker cài đặt [SCBOJ](https://github.com/SieuCoBan/SCBOJ) dựa
 Lưu ý:
 --------------------------------
 - Nếu đang dùng user có quyền root thì có thể bỏ lệnh ```sudo``` ở các dòng lệnh trong hướng dẫn bên dưới
+- Thực hiện chạy từng dòng lệnh, nếu có lỗi thì chạy lại dòng lệnh đó.
 ## 1. Cài đặt docker
 - Update hệ thống và cài chứng chỉ
 ```
