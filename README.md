@@ -145,11 +145,11 @@ Lệnh restore
 cat /root/backup_db.sql | docker exec -i vnoj_mysql mysql -u dmoj -p<mật khẩu database dmoj> dmoj
 ```
 # 3. Cài máy chấm
-- Xem hướng dẫn cài máy chấm tại: [SCBOJ-judge](https://github.com/SieuCoBan/SCBOJ-judge)
+- Xem hướng dẫn cài máy chấm tại: [VNOJ-judge](https://vnoi-admin.github.io/vnoj-docs/#/judge/setting_up_a_judge)
 ### Tải judge
 ```
-$ git clone --recursive https://github.com/DMOJ/judge.git
-$ cd judge/.docker
+$ git clone --recursive https://github.com/VNOI-Admin/judge-server.git
+$ cd judge-server/.docker
 $ make judge-tier1
 $ docker run \
     -v /mnt/problems:/problems \
